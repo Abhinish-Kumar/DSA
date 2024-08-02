@@ -25,7 +25,7 @@
 ```
 Output :- 
 
-<img src="images/btree.png" />
+<img src="images/binaryTree1.png" />
 
 
 ## PreOrder Traversal
