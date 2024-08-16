@@ -492,6 +492,12 @@ This table represents the characters from the extended ASCII range (128-255) in 
 
 While 7-bit ASCII provides a basic set of characters suitable for English and control functions, 8-bit ASCII offers a broader range of characters to support additional languages and symbols.
 
+Note:- difference between both is only that , 8bit ASCII cover some more characters then 7bit ASCII.
+
+
+
+
+
 
 
 
