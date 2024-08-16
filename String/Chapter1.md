@@ -61,6 +61,15 @@ All the ASCII characters
 2. Space Bar --- 13
 3. Escape --- 27
 
+Summary 
+
+1. ASCII stands for ** American Standard Code for Information Interchange**
+2. It is the most common format for files of computer
+3. It maps Binary To letters / Numbers
+4. It represents text which maked it possible to transfer from one computer to another , It act as a common languge code for computers to communicate.
+5. The ASCII is a **7bits** code whose format is X^6 X^5 X^4 X^3 X^2 X^1 X^0, where each X is o or 1.
+6. It represents English Language Characters (letters, numbers , symbols and punctuations).
+
 
 
 
