@@ -70,8 +70,28 @@ Summary
 5. The ASCII is a **7bits** code whose format is X^6 X^5 X^4 X^3 X^2 X^1 X^0, where each X is o or 1.
 6. It represents English Language Characters (letters, numbers , symbols and punctuations).
 
+# extended ASCII / 8bit ASCII
 
 
+## Differences Between 7-bit ASCII and 8-bit ASCII
+
+### 7-bit ASCII
+
+- **Character Set**: Uses 7 bits for each character, allowing for **128 different characters** (`2^7 = 128`).
+- **Range**: Character codes range from **0 to 127**.
+- **Content**: Includes basic English letters (both uppercase and lowercase), digits, punctuation marks, and a few control characters (such as newline and carriage return).
+- **Standard**: 7-bit ASCII is the original ASCII standard.
+
+### 8-bit ASCII
+
+- **Character Set**: Uses 8 bits for each character, allowing for **256 different characters** (`2^8 = 256`).
+- **Range**: Character codes range from **0 to 255**.
+- **Content**: Includes all 128 characters of 7-bit ASCII plus additional characters such as special symbols, accented letters, and other characters useful in various languages and applications.
+- **Extension**: Often referred to as **extended ASCII**. Various extended ASCII sets exist, such as ISO 8859-1 (Latin-1), which includes characters for Western European languages.
+
+### Summary
+
+While 7-bit ASCII provides a basic set of characters suitable for English and control functions, 8-bit ASCII offers a broader range of characters to support additional languages and symbols.
 
 
 
