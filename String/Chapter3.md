@@ -7,7 +7,7 @@
 - **Range:** Uses 7 bits to encode 128 characters.
 - **Use Case:** Essential for early computing systems, simple text files, and protocols.
 
-### in C
+## in C
 ```c
 char temp;
 temp = 'A'; // ✅ Correct
@@ -55,6 +55,46 @@ int main() {
     return 0;
 }
 ```
+
+
+## In javascript
+In JavaScript, characters are handled differently compared to languages like C, especially with respect to encoding and memory representation. Here’s an overview of how JavaScript manages characters and their ASCII (or Unicode) codes:
+
+### 1.  String Representation
+
+1. String Type:- In JavaScript, characters are represented as strings. A JavaScript `string` can contain zero or more characters.
+2. Single Characters:- JavaScript does not have a separate `char` type like C. Instead, strings are used to represent characters.
+
+```javascript
+
+let temp = 'A';  // 'A' is a string containing a single character
+
+```
+
+### 2.  Character Encoding
+
+"JavaScript strings are encoded in UTF-16"
+
+
+#### UTF-16 Encoding
+
+1. What is UTF-16?
+
+UTF-16 is a way to encode `characters` as a sequence of `16-bit` code units. Think of it as a system for storing characters in a computer using `16-bit` "chunks" or units.
+
+UTF-16 Example: 
+# Character Representation in Different Encodings
+
+
+# UTF-16 Encoding Example
+
+| **Character** | **16-bit Binary** | **Memory Storage** |
+|---------------|-------------------|--------------------|
+| 'A' (65)      | `00000000 01000001` | `0x0041`          |
+
+
+2. How does it works?
+
 
 
 
