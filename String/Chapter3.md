@@ -7,6 +7,13 @@
 - **Range:** Uses 7 bits to encode 128 characters.
 - **Use Case:** Essential for early computing systems, simple text files, and protocols.
 
+## Unicode
+
+### **1. Global Character Representation**
+- **Purpose:** Unicode provides a comprehensive character set that includes virtually all characters from written languages, symbols, and emojis.
+- **Range:** Supports over 1.1 million characters, using code points ranging from `U+0000` to `U+10FFFF`.
+
+
 ## in C
 ```c
 char temp;
@@ -152,16 +159,7 @@ The Unicode code point for `'😀'` is `128512`, which is beyond the range of a 
 - UTF-16 Encoding: JavaScript strings use UTF-16, which means each character is stored as either one or two 16-bit units. Most common characters are stored in one unit, while more complex characters use two units (a surrogate pair).
 - Unicode Code Points: Every character has a unique Unicode code point. JavaScript can handle these code points and convert them into the UTF-16 encoding used internally.
 
-## Unicode
 
-### **1. Global Character Representation**
-- **Purpose:** Unicode provides a comprehensive character set that includes virtually all characters from written languages, symbols, and emojis.
-- **Range:** Supports over 1.1 million characters, using code points ranging from `U+0000` to `U+10FFFF`.
-
-
-**In Summary:**
-- **ASCII:** Essential for simple character encoding and legacy systems, providing a foundation for more complex encodings.
-- **Unicode:** Critical for modern applications, enabling consistent, global character representation and supporting diverse languages and symbols.
 
 
 
