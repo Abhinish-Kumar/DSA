@@ -76,3 +76,23 @@ console.log(personQueue.size()); // Output: 1, since one element remains
 console.log(personQueue.isEmpty()); // Output: false, since there's still an element
 
 ```
+
+| **Method**        | **Time Complexity** | **Space Complexity** |
+|-------------------|---------------------|----------------------|
+| `enqueue(element)`| `O(1)`              | `O(1)`               |
+| `isEmpty()`       | `O(1)`              | `O(1)`               |
+| `dequeue()`       | `O(n)`              | `O(1)`               |
+| `front()`         | `O(1)`              | `O(1)`               |
+| `size()`          | `O(1)`              | `O(1)`               |
+| `printQueue()`    | `O(n)`              | `O(n)`               |
+
+### **Overall Space Complexity of the `Q` class:** `O(n)`
+
+
+Note:- Problem of this array is that dequeue is taking O(n) time because of the shifting of array elements , by deleting elements from index 0.
+
+
+
+
+
+
