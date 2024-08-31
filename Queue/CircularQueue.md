@@ -45,6 +45,44 @@ console.log(arr); // [0, 0, 0, 0, 0]
 ### queue code with fix size
 
 ```javascript
+class Q {
+  constructor(size) {
+    this.size = size;
+    this.queue = new Array(size);
+    //rear is at right and work with enqueue "add from right"
+    this.rear = -1;
+    //front is at left and work with dequeue 'remove from left'
+    this.front = -1;
+  }
+  enqueue(data) {
+    if (this.front === -1) this.front = 0;
+    // Check if the queue is full
+    //one element in the queue means "this.rear == 0"
+    //n element = "this.rear == n-1"
+    //3 element = "this.rear == 3-1=2" this.rear is at index 2 means its full
+    //this.rear === 2 "means full"
+    //compare with "this.size" size is 3
+    //we should stop when both are equal
+    //2<2 ==== run when it rear is -1 , 0 , 1
+    //we are updating the rear inside
+    //outside its value start from -1
+    //1<2 "if size is 3, subtract to 1 and it will become 2 and run the block until 1< 2, stop if it become 2==2
+    if (this.rear < this.size - 1) {
+      this.rear++;
+      this.queue[this.rear] = data;
+      return this.queue;
+    } else {
+      return "queue is full";
+    }
+  }
+}
+
+let qq = new Q(3);
+console.log(qq.enqueue(10));
+console.log(qq.enqueue(10));
+console.log(qq.enqueue(10));
+console.log(qq.enqueue(10));
+console.log(qq.enqueue(10));
 
 ```
 
