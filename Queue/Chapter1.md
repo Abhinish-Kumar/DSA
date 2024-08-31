@@ -94,5 +94,66 @@ Note:- Problem of this array is that dequeue is taking O(n) time because of the 
 
 
 
+## Example 2
+
+
+```javascript
+
+class Q {
+  constructor() {
+    this.queue = [];
+    this.rear = -1;
+    this.front = -1;
+  }
+  enqueue(data) {
+    //remove from front left , starting of queue
+    if (this.front === -1) this.front = 0;
+    //if rear is -1 increment to make it 0 a valid index to inset data
+    this.rear++;
+    this.queue[this.rear] = data;
+    return this.queue;
+  }
+  dequeue() {
+    this.queue[this.front] = null;
+    this.front++;
+    return this.queue;
+  }
+  printQueue() {
+    //slice , start fron given index till end (not included)
+    //avoid using this O(n)time complexity
+    let ququeData = this.queue.slice(this.front, this.rear + 1);
+    console.log(ququeData);
+  }
+}
+
+let q = new Q();
+q.enqueue(10);
+q.enqueue(20);
+q.enqueue(30);
+q.enqueue(40);
+q.dequeue();
+q.dequeue();
+q.enqueue(50);
+q.enqueue(60);
+q.enqueue(70);
+q.enqueue(80);
+q.enqueue(50);
+q.enqueue(60);
+q.enqueue(70);
+q.enqueue(80);
+
+console.log(q.enqueue(50));
+q.printQueue();
+
+```
+
+| Operation | Time Complexity | Space Complexity |
+|-----------|-----------------|------------------|
+| enqueue   | O(1)            | O(1)             |
+| dequeue   | O(1)            | O(1)             |
+
+
+
+
 
 
