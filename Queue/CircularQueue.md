@@ -15,9 +15,38 @@ Note :- Think it as a clock 🕒 where after 12 it goes to the 1 , by clearing 1
 
 ## create a linear queue with fix size.
 
+### All the ways to create a fix array in javascript
 
+```javascript
+//one - with empty items
+let arr = new Array(5);
+console.log(arr.length); // 5
+console.log(arr); // [ <5 empty items> ]
 
+//two - fith filled items
+let arr = new Array(5).fill(0);
+console.log(arr.length); // 5
+console.log(arr); // [0, 0, 0, 0, 0]
 
+//three pass index number as value
+let arr = Array.from({ length: 5 }, (_, i) => i);
+console.log(arr.length); // 5
+console.log(arr); // [0, 1, 2, 3, 4]
+
+//fouth - with spread operator
+let arr = [...Array(5)].map(() => 0);
+console.log(arr.length); // 5
+console.log(arr); // [0, 0, 0, 0, 0]
+
+//it will create a array of size 5 and map method will loop the array and create a new array with value 0
+
+```
+
+### queue code with fix size
+
+```javascript
+
+```
 
 
 
