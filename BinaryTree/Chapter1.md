@@ -515,6 +515,89 @@ levelOrderTraversal(rootNode);
       console.log(levelOrderTraversal(drinks));
 ```
 
+## Insertion (Level Order ) 2
 
+```javascript
+   class TreeNode {
+        constructor(data) {
+          this.data = data;
+          this.left = null;
+          this.right = null;
+        }
+      }
+
+      let drinks = new TreeNode("Drinks");
+      let hot = new TreeNode("Hot");
+      let cold = new TreeNode("Cold");
+      drinks.left = hot;
+      let chai = new TreeNode("Chai");
+      let coffee = new TreeNode("Coffee");
+      hot.left = chai;
+      hot.right = coffee;
+      drinks.right = cold;
+      let alcoholic = new TreeNode("alcoholic");
+      let nonAlcoholic = new TreeNode("nonAlcoholic");
+      cold.left = alcoholic;
+      cold.right = nonAlcoholic;
+
+      function levelOrderTraversal(rootNode) {
+        if (rootNode === null) {
+          return "tree is traversed";
+        } else {
+          let queue = [];
+          queue.push(rootNode);
+
+          while (queue.length > 0) {
+            let n = queue.shift();
+            console.log(n.data);
+            if (n.left) {
+              queue.push(n.left);
+            }
+            if (n.right) {
+              queue.push(n.right);
+            }
+          }
+        }
+      }
+
+      function insertInLevelOrder(rootNode, nodeToonsert) {
+        if (rootNode === null) {
+          return "tree is traversed";
+        } else {
+          let queue = [];
+          queue.push(rootNode);
+
+          while (queue.length > 0) {
+            let n = queue.shift();
+            if (n.left) {
+              queue.push(n.left);
+            } else {
+              n.left = nodeToonsert;
+              return "Inserted Successfully";
+            }
+            if (n.right) {
+              queue.push(n.right);
+            } else {
+              n.right = nodeToonsert;
+              return "Inserted Successfully";
+            }
+          }
+        }
+      }
+    
+      let green = new TreeNode("Green");
+      console.log(insertInLevelOrder(drinks, green));
+      let black = new TreeNode("Black");
+      console.log(insertInLevelOrder(drinks, black));
+      console.log("===============================");
+
+      let american = new TreeNode("American");
+      console.log(insertInLevelOrder(drinks, american));
+      let latte = new TreeNode("Latte");
+      console.log(insertInLevelOrder(drinks, latte));
+      console.log("===============================");
+      console.log(levelOrderTraversal(drinks));
+      console.log(drinks);
+```
 
 
