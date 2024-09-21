@@ -776,3 +776,23 @@ levelOrderTraversal(rootNode);
       console.log(deleteDeepestNode(drinks, "Black"));
       console.log(levelOrderTraversal(drinks));
 ```
+
+## Delete the entire binary tree
+
+
+```javascript
+ function deleteBt(rootNode) {
+        rootNode.data = null;
+        rootNode.left = null;
+        rootNode.right = null;
+        return "binary tree is deleted";
+      }
+
+      console.log(deleteBt(drinks));
+      console.log(levelOrderTraversal(drinks));
+```
+
+
+
+
+
