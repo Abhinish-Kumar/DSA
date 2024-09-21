@@ -600,4 +600,179 @@ levelOrderTraversal(rootNode);
       console.log(drinks);
 ```
 
+## delete from binary tree
 
+```javascript
+ class TreeNode {
+        constructor(data) {
+          this.data = data;
+          this.left = null;
+          this.right = null;
+        }
+      }
+
+      let drinks = new TreeNode("Drinks");
+      let hot = new TreeNode("Hot");
+      let cold = new TreeNode("Cold");
+      drinks.left = hot;
+      let chai = new TreeNode("Chai");
+      let coffee = new TreeNode("Coffee");
+      hot.left = chai;
+      hot.right = coffee;
+      drinks.right = cold;
+      let alcoholic = new TreeNode("alcoholic");
+      let nonAlcoholic = new TreeNode("nonAlcoholic");
+      cold.left = alcoholic;
+      cold.right = nonAlcoholic;
+
+      function levelOrderTraversal(rootNode) {
+        if (rootNode === null) {
+          return "tree is traversed";
+        } else {
+          let queue = [];
+          queue.push(rootNode);
+
+          while (queue.length > 0) {
+            let n = queue.shift();
+            console.log(n.data);
+            if (n.left) {
+              queue.push(n.left);
+            }
+            if (n.right) {
+              queue.push(n.right);
+            }
+          }
+        }
+      }
+
+      function insertInLevelOrder(rootNode, nodeToonsert) {
+        if (rootNode === null) {
+          return "tree is traversed";
+        } else {
+          let queue = [];
+          queue.push(rootNode);
+
+          while (queue.length > 0) {
+            let n = queue.shift();
+            if (n.left) {
+              queue.push(n.left);
+            } else {
+              n.left = nodeToonsert;
+              return "Inserted Successfully";
+            }
+            if (n.right) {
+              queue.push(n.right);
+            } else {
+              n.right = nodeToonsert;
+              return "Inserted Successfully";
+            }
+          }
+        }
+      }
+
+      let green = new TreeNode("Green");
+      console.log(insertInLevelOrder(drinks, green));
+      let black = new TreeNode("Black");
+      console.log(insertInLevelOrder(drinks, black));
+      console.log("===============================");
+
+      let american = new TreeNode("American");
+      console.log(insertInLevelOrder(drinks, american));
+      let latte = new TreeNode("Latte");
+      console.log(insertInLevelOrder(drinks, latte));
+      console.log("===============================");
+      console.log(levelOrderTraversal(drinks));
+
+      //Find the deepest node in the tree
+
+      function findDeepestNode(rootNode) {
+        if (rootNode === null) {
+          return;
+        } else {
+          let deepestNode = null;
+          let queue = [];
+          queue.push(rootNode);
+
+          while (queue.length > 0) {
+            let n = queue.shift();
+            if (n.left) {
+              queue.push(n.left);
+            }
+            if (n.right) {
+              queue.push(n.right);
+            }
+            deepestNode = n.data;
+          }
+          return deepestNode;
+        }
+      }
+      //these are the helper function
+      function deleteDeepestNode(root, dNode) {
+        if (root === null) {
+          return;
+        } else {
+          let queue = [];
+          queue.push(root);
+          while (queue.length > 0) {
+            root = queue.shift();
+            // console.log(root.data);
+            if (root.data === dNode) {
+              root.data = null;
+              return;
+            }
+
+            if (root.left) {
+              if (root.left.data === dNode) {
+                root.left = null;
+                return;
+              } else {
+                queue.push(root.left);
+              }
+            }
+            if (root.right) {
+              if (root.right.data === dNode) {
+                root.right = null;
+                return;
+              } else {
+                queue.push(root.right);
+              }
+            }
+          }
+        }
+      }
+      function deleteNode(root, nodeTodelete) {
+        if (root === null) {
+          return "No tree is there to delete a node";
+        } else {
+          let queue = [];
+          queue.push(root);
+          while (queue.length > 0) {
+            let n = queue.shift();
+            if (n.data === nodeTodelete) {
+              let dnode = findDeepestNode(root);
+              n.data = dnode;
+              // console.log(dnode);
+              deleteDeepestNode(root, dnode);
+              return "Node has been successfully deleted";
+            }
+            if (n.left) {
+              queue.push(n.left);
+            }
+            if (n.right) {
+              queue.push(n.right);
+            }
+          }
+          return "Failed to delete a node from this binary tree";
+        }
+      }
+      console.log("===========================");
+      // let dnode = findDeepestNode(drinks);
+      // deleteDeepestNode(drinks, findDeepestNode(drinks));
+      // deleteDeepestNode(drinks, findDeepestNode(drinks));
+      // deleteDeepestNode(drinks, findDeepestNode(drinks));
+      // console.log(findDeepestNode(drinks));
+
+      console.log(deleteDeepestNode(drinks, "Cold"));
+      console.log(deleteDeepestNode(drinks, "Black"));
+      console.log(levelOrderTraversal(drinks));
+```
